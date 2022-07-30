@@ -5,12 +5,13 @@ import os
 import pandas as pd
 import requests
 
-def get_results_from_foursquare (query, location, radius, limit):
+def get_results_from_foursquare (key, query, location, radius, limit):
     '''
     This function takes a query with parameters and returns a df with the results. 
 
     Parameters
     ----------
+    key: Authorization
     query: Keywords of the search
     location: Starting location in [latt,long]
     radius: Distance in meters
