@@ -1,40 +1,51 @@
 #Libraries
-import numpy as np
+from dotenv import load_dotenv
+import json
+import os
 import pandas as pd
+import requests
 
-def formatting (df, *cols):
-    '''
-    This function takes a dataframe and strips the value of the text columns. 
+def get_results_from_foursquare (query, location, radius, limit):
+        '''
+    This function takes a query with parameters and returns a df with the results. 
     
     Parameters
     ----------
-    df : dataframe with spaces in the columns
-    *cols: column(s) that need to be corrected
+    query: Keywords of the search
+    location: Starting location in [latt,long]
+    radius: Distance in meters
+    limit: amount of allowed results (1-50)
     
     Returns
     -------
-    df2 : corrected dataframe
+    df : Closest results and locations
     '''
-    df2=df
-    for col in cols:
-        df2=df2.astype({f'{col}': str}, errors='raise')
-        df2[f'{col}']=df2[f'{col}'].apply(lambda x: x.strip())
-    return df2
+    # Strip query and replace spaces by %20
+    if " " in query.strip():
+           query_ok = query.strip().replace(" ","%20")
+    else:
+           query_ok = query.strip()
+    
+    #url has to be formated to fit the search
+    url = f"https://api.foursquare.com/v3/places/search?query={query_ok}&ll={str(location[0]).strip()}%2C{str(location[1]).strip()}&radius={radius}&sort=DISTANCE&limit={limit}"
+    headers =  { "Accept": "application/json",
+                 "Authorization": f"{key}" }
+    response = requests.get(url, headers=headers)
+    
+    #If we don't get matches, we still want to know
+    if response:
+        try:
+            results=response.json()['results']
+            new_list = [ {"name" : i["name"],
+                          "lat"  : i["geocodes"]["main"]["latitude"],
+                          "long" : i["geocodes"]["main"]["longitude"],
+                          "type" : {"typepoint":
+                                      {"type": "Point"}}} for i in results]
 
-def dropping (df, *cols):
-    '''
-    This function drops column(s) from a dataframe. 
-    
-    Parameters
-    ----------
-    df : dataframe with spaces in the columns
-    *cols: column(s) that need to be dropped
-    
-    Returns
-    -------
-    df2 : corrected dataframe
-    '''
-    df2=df
-    for col in cols:
-        df2=df2.drop(columns=f'{col}')
-    return df2
+            df = pd.DataFrame(new_list)
+            return df
+        except:
+            return f"Sorry, no matches for {query} in the coordinates {location}"
+        
+    else:
+        return f"Sorry, no matches for {query} in the coordinates {location}"
