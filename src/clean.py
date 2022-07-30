@@ -6,20 +6,20 @@ import pandas as pd
 import requests
 
 def get_results_from_foursquare (query, location, radius, limit):
-'''
-This function takes a query with parameters and returns a df with the results. 
+    '''
+    This function takes a query with parameters and returns a df with the results. 
 
-Parameters
-----------
-query: Keywords of the search
-location: Starting location in [latt,long]
-radius: Distance in meters
-limit: amount of allowed results (1-50)
+    Parameters
+    ----------
+    query: Keywords of the search
+    location: Starting location in [latt,long]
+    radius: Distance in meters
+    limit: amount of allowed results (1-50)
 
-Returns
--------
-df : Closest results and locations
-'''
+    Returns
+    -------
+    df : Closest results and locations
+    '''
 # Strip query and replace spaces by %20
     if " " in query.strip():
         query_ok = query.strip().replace(" ","%20")
