@@ -37,11 +37,10 @@ def get_results_from_foursquare (key, query, location, radius, limit):
     if response:
         try:
             results=response.json()['results']
-            new_list = [ {"name" : query_ok,
+            new_list = [ {"name" : query.strip(),
                       "lat"  : i["geocodes"]["main"]["latitude"],
-                      "long" : i["geocodes"]["main"]["longitude"],
-                      "type" : {"typepoint":
-                                  {"type": "Point"}}} for i in results]
+                      "long" : i["geocodes"]["main"]["longitude"] 
+                      "type" : {"typepoint": {"type": "Point"}} } for i in results]
 
             df = pd.DataFrame(new_list)
             return df
