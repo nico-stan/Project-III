@@ -32,7 +32,7 @@ We asked our employees what they needed to feel happy about our new home. The cr
 </p>
 
 ## Location Research
-1. First step was quering the companies database using mongo. As we value inspiration and want to be close to the tech and design environment, we looked for tech startpus location (biotech, cleantech, ecommerce, games video, nanotech, software, web) considering as startups companies founded from 2000 on, with less than 100 employees, that raised more than $1000000 in funding rounds. We ended up with a list of the top ten cities with more startups. We selected the top 3 as they were also listed as the best place to find job as a designer (www.designrush.com). The cities we considered were: New York, London and San Francisco.
+1. First step was quering the companies database using Mongo. As we value inspiration and want to be close to the tech and design environment, we looked for tech startpus location (biotech, cleantech, ecommerce, games video, nanotech, software, web) considering as startups companies founded from 2000 on, with less than 100 employees, that raised more than $1000000 in funding rounds. We ended up with a list of the top ten cities with more startups. We selected the top 3 as they were also listed as the best place to find job as a designer (www.designrush.com). The cities we considered were: New York, London and San Francisco.
 
 </p>
 <p>
