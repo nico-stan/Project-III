@@ -4,6 +4,7 @@ import json
 import os
 import pandas as pd
 import requests
+from folium import Circle, FeatureGroup
 
 def get_results_from_foursquare (key, query, location, radius, limit):
     '''
@@ -48,3 +49,57 @@ def get_results_from_foursquare (key, query, location, radius, limit):
             return f"Sorry, no matches for {query} in the coordinates {location}"
     else:
         return f"Sorry, no matches for {query} in the coordinates {location}"
+
+def walking(m, location):
+    '''
+    This function takes a map and location and returns a map with walking areas. 
+
+    Parameters
+    ----------
+    m: Map
+    location: Starting location in [latt,long]
+    radius: Distance in meters
+
+    Returns
+    -------
+    m : Map with walking areas.
+    '''
+    #1km circle - Up to 12 min walking
+    km1 = FeatureGroup(name="Circle 1km").add_to(m)
+    Circle(
+        location=location,
+        color='green',
+        radius=1000,
+        fill=True,
+        opacity=0.5,
+        fill_opacity=0.5,
+        tooltip='1km'
+    ).add_to(km1)
+    
+    #2km circle - Up to 24 min walking
+    km2 = FeatureGroup(name="Circle 2km").add_to(m)
+    Circle(
+        location=location,
+        color='yellow',
+        radius=2000,
+        fill=True,
+        opacity=0.6,
+        fill_opacity=0.4,
+        tooltip='2km'
+    ).add_to(km2)
+    
+    #3km circle - Up to 36 min walking
+    km3 = FeatureGroup(name="Circle 3km").add_to(m)
+    Circle(
+        location=location,
+        color='red',
+        radius=3000,
+        fill=True,
+        opacity=0.4,
+        fill_opacity=0.3,
+        tooltip='3km'
+    ).add_to(km3)
+
+    LayerControl().add_to(m)
+    
+    return m
