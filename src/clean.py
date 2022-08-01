@@ -1,12 +1,29 @@
 #Libraries
+#Libraries
+from collections import Counter
 from dotenv import load_dotenv
+from folium.plugins import HeatMap, MarkerCluster
+import geopandas as gpd
 import json
 import os
 import pandas as pd
+from pymongo import MongoClient, GEOSPHERE
 import requests
-from folium import Circle, FeatureGroup
+from folium import Circle, FeatureGroup, LayerControl
 
-def get_results_from_foursquare (key, query, location, radius, limit):
+#Credentials
+load_dotenv()
+key = os.getenv("key")
+
+# Location on the Mission disctrict
+location = [37.7615584,-122.4155738]
+radius=3000
+limit=10
+
+data = gpd.read_file("/Users/nicostan/Downloads/Ironhack/labs/Project-III/jsons-input/san-francisco.geojson")
+data['geometry'][3]
+
+def foursquare (key, query, location, radius, limit):
     '''
     This function takes a query with parameters and returns a df with the results. 
 
@@ -29,7 +46,7 @@ def get_results_from_foursquare (key, query, location, radius, limit):
         query_ok = query.strip()
         
 #url has to be formated to fit the search
-    url = f"https://api.foursquare.com/v3/places/search?query={query_ok}&ll={str(location[0]).strip()}%2C{str(location[1]).strip()}&radius={radius}&sort=DISTANCE&limit={limit}"
+    url = f"https://api.foursquare.com/v3/places/search?query={query_ok}&ll={str(location[0]).strip()}%2C{str(location[1]).strip()}&radius={radius}&limit={limit}"
     headers =  { "Accept": "application/json",
              "Authorization": f"{key}" }
     response = requests.get(url, headers=headers)
