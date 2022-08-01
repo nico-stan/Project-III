@@ -2,8 +2,8 @@
 #Libraries
 from collections import Counter
 from dotenv import load_dotenv
-from folium.plugins import HeatMap, MarkerCluster
 import geopandas as gpd
+import geopy.distance
 import json
 import os
 import pandas as pd
