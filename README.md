@@ -27,7 +27,7 @@ We asked our employees what they needed to feel happy about our new home. The cr
 - Everyone in the company is between 25 and 40, give them some place to go party.
 - The CEO is vegan.
 - If you want to make the maintenance guy happy, a basketball stadium must be around 10 Km.
-- The office dog—"Dobby" needs a hairdresser every month. Ensure there's one not too far away.
+- The office dog "Dobby" needs a hairdresser every month. Ensure there's one not too far away.
  
 </p>
 
@@ -62,45 +62,41 @@ Moreover, we don't want our employees stuck in long hours drive to be able to co
  
 </p>
  
- 5.We believe that in creative teams everyone is equally important, so we also checked for the rest of our criteria to find a new home using Foursquare API. In the map it is possible to see that all the criteria important for our employees and Dobby were met in the 3 km radius.
+5. We believe that in creative teams everyone is equally important, so we also checked for the rest of our criteria to find a new home using Foursquare API. In the map it is possible to see that all the criteria important for our employees and Dobby were met in the 3 km radius.
  
 <p>
-![final plot](https://raw.githubusercontent.com/nico-stan/Project-III/714fd9eb6e1dd4e783df1f29eb3458de217bd833/Output/Final_Map.png)
+ 
+![final plot](https://user-images.githubusercontent.com/46969106/182244843-dc8df0fc-19e1-4467-8b9c-190bd51f384b.png)
  
 </p>
+<p>
+ 
+We also have a nearby airport for our accountants!
+  
+![ airport](https://user-images.githubusercontent.com/46969106/182244914-1668e586-7336-4728-9067-48c9448ce37c.png)
 
 ## Our New Home 
-​
-Our location has to be aligned with our values. Therefore, we need a home that meets the following requirements:
-<p>
 
- 
-
-​
-## Considerations and limitations
-​
+At **Hourglass games** we are crazy about fun and serious about people and data. We believe that people are at their best when they have fun and they are happy. And this starts home. So our new locations respects the need of all our employees so they can do better what they know the best: make other people happy while they feel taken care of. Our new building is aligned with our values. This is a place to be productive and happy. </p>
 
 
-### How reliable is this data?
-<p align="left">
-<img src=" " />
+![Pionner](https://user-images.githubusercontent.com/46969106/182246740-c46aa604-dec9-4e0e-947b-bb7702036d1c.png)
+
+</p>
+And Dobby says: thanks!
+
+<p align="center">
+<img src="https://media0.giphy.com/media/4Zo41lhzKt6iZ8xff9/giphy.webp?cid=ecf05e473x7jjzo8xkoo0i8sdd9w1u3atvz01f9pgtcotbqr&rid=giphy.webp&ct=g" width="500" height="400" />
 </p>
 
-
-​
 ## Project files
 ​
 The main directory has 3 subdirectories:
-- Input: Holds the data used to analyze the hypothesis. It is a folder with multiple files which are then merged into a single dataframe in the Output folder df_clean.
-- Output: Contains the df created from the original data, and a folder named images with the figures that are used multiple times through the project.
+- Input: Holds the data used to find our location with json.
+- Output: Contains the images with the figures that are used multiple times through the project.
 - src: Contains python files with all functions created specifically for this analysis.
+In the root directory there are three aditional files:
 - README: This file works as a report for the project
-In the root directory there are 2 Jupyter Notebook files that include all the code used in the project:
-- "Exploratory data analysis" (EDA): This file explores the data (how much data there is, how is it organized and the quality of it). This file also scrapes information from wikipedia on Net Migration by country and merges all input files into a single dataframe.
-- Plotting: This file is used to create plots that help visualize the data in order to check if the hypothesis is true.
+- A Jupyter Notebook that includes all the code used in the project
+- A Jupyter Notebook with the dataframe from the web scrapping
 
-​
-## Annex
-​
-**- Variable**
-Explanation
