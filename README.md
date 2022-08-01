@@ -1,11 +1,13 @@
-# Project III - Best location for game startup
+# Project III - Best location for Hourglass games
 
 <p align="center">
 <img src="https://media3.giphy.com/media/9JgeSP0jlRAVBOG9FD/giphy.gif?cid=ecf05e47jp3l0uc3mrb3f6la40lmqjda5av04epacqm4qpx9&rid=giphy.gif&ct=g" width="400" height="200" />
 </p>
 ​
 ## Premise
-Locating business is a challenging choice considering that are many interests to be met. As we decided to start the **Hourglass games**, we looked for the best building according to our company values and needs. In **Hourglass videogame**, we value:<p>
+Locating business is a challenging choice considering that are many interests to be met. As we decided to start the **Hourglass games**, we looked for the best building according to our company values and needs. In **Hourglass videogame**, we value:
+
+<p>
  
 - Be Adventurous, Creative, and Open-Minded
 - Have all you need close to where your heart lives (at walking distance)
@@ -23,7 +25,7 @@ Locating business is a challenging choice considering that are many interests to
 3. 
 4.
 
- Query the database
+
 Use an API to get venues (and for this, you'll need a starting point; some coordinates from which you will call the API)
 Justify your decision using data, not just visualization. How? Maybe measuring distances, maybe assinging weights depending on the importance of your criteria, maybe calculating the density of schools/Starbucks, etc.
 ​
