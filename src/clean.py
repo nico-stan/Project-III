@@ -9,7 +9,7 @@ import os
 import pandas as pd
 from pymongo import MongoClient, GEOSPHERE
 import requests
-from folium import Circle, FeatureGroup, LayerControl
+from folium import Choropleth, Circle, FeatureGroup, GeoJson, Icon, LayerControl, Map, Marker, Popup
 
 #Credentials
 load_dotenv()
@@ -74,7 +74,6 @@ def walking(m, location):
     ----------
     m: Map
     location: Starting location in [latt,long]
-    radius: Distance in meters
 
     Returns
     -------
@@ -96,7 +95,7 @@ def walking(m, location):
     km2 = FeatureGroup(name="Circle 2km").add_to(m)
     Circle(
         location=location,
-        color='blue',
+        color='yellow',
         radius=2000,
         fill=True,
         opacity=0.6,
@@ -116,4 +115,139 @@ def walking(m, location):
         tooltip='3km'
     ).add_to(km3)
     
+    return m
+
+
+def mapping(m, df, location):
+    '''
+    This function takes a map, df and location and returns a map with walking areas. 
+
+    Parameters
+    ----------
+    m: Map
+    df: Dataframe
+    location: Starting location in [latt,long]
+
+    Returns
+    -------
+    m : Map with walking areas.
+    '''
+    old_startup = FeatureGroup(name='Startup (before 2013)').add_to(m)
+    design = FeatureGroup(name="Design Studios").add_to(m)
+    school = FeatureGroup(name="Children School").add_to(m) 
+    startup = FeatureGroup(name="Startups").add_to(m)
+    starbucks = FeatureGroup(name="Starbucks").add_to(m)
+    airport = FeatureGroup(name="Airports").add_to(m)
+    bar = FeatureGroup(name="Bar").add_to(m)
+    vegan = FeatureGroup(name="Vegan Restaurant").add_to(m)
+    basketball = FeatureGroup(name="Basketball Stadium").add_to(m)
+    pet = FeatureGroup(name="Pet Grooming").add_to(m)
+
+    for index, row in df.iterrows():
+
+         # 1. Location (and some other things like the tooltip)
+        place = {"location": [row["lat"], row["long"]], "tooltip": row["name"]}
+
+        #color based on distance (in km) to the starting location
+        distance = geopy.distance.geodesic(location, place['location']).km
+        if  distance <= 1 :
+            color = 'lightgreen'
+        elif 1 < distance <= 2 :
+            color = 'lightblue'
+        elif 2 < distance <= 3 :
+            color = 'lightred'
+        else:
+            color = 'lightgray'
+
+        # 2. Icon based on the value
+
+        if row["name"] == "Design Studio":
+            icon = Icon (
+                color=color,
+                prefix="fa",
+                icon="pencil",
+                icon_color = "black")
+            new_marker = Marker(**place, icon=icon)
+            new_marker.add_to(design)
+
+        elif row["name"] == "Children School":
+            icon = Icon (
+                color=color,
+                prefix="fa",
+                icon="book",
+                icon_color = "black")
+            new_marker = Marker(**place, icon=icon)
+            new_marker.add_to(school)
+
+        elif row["name"] == "Startup":
+            icon = Icon (
+                color=color,
+                prefix="fa",
+                icon="lightbulb-o",
+                icon_color = "black") 
+            new_marker = Marker(**place, icon=icon)
+            new_marker.add_to(startup)
+
+        elif row["name"] == "Starbucks":
+            icon = Icon (
+                color=color,
+                prefix="fa",
+                icon="coffee",
+                icon_color = "black")
+            new_marker = Marker(**place, icon=icon)
+            new_marker.add_to(starbucks)
+
+        elif row["name"] == "San Francisco International Airport":
+            icon = Icon (
+                color=color,
+                prefix="fa",
+                icon="plane",
+                icon_color = "black")
+            new_marker = Marker(**place, icon=icon)
+            new_marker.add_to(airport)
+
+        elif row["name"] == "Bar":
+            icon = Icon (
+                color=color,
+                prefix="fa",
+                icon="beer",
+                icon_color = "black")
+            new_marker = Marker(**place, icon=icon)
+            new_marker.add_to(bar)
+
+        elif row["name"] == "Vegan Restaurant":
+            icon = Icon (
+                color=color,
+                prefix="fa",
+                icon="leaf",
+                icon_color = "black")
+            new_marker = Marker(**place, icon=icon)
+            new_marker.add_to(vegan)
+
+        elif row["name"] == "Basketball Stadium":
+            icon = Icon (
+                color=color,
+                prefix="fa",
+                icon="futbol-o",
+                icon_color = "black")
+            new_marker = Marker(**place, icon=icon)
+            new_marker.add_to(basketball)
+
+        elif row["name"] == "Pet Grooming":
+            icon = Icon (
+                color=color,
+                prefix="fa",
+                icon="paw",
+                icon_color = "black")
+            new_marker = Marker(**place, icon=icon)
+            new_marker.add_to(pet)
+
+        elif row["name"] == 'Startup (before 2013)':
+            icon = Icon (
+                color=color,
+                prefix="fa",
+                icon="lightbulb-o",
+                icon_color = "black")
+            new_marker = Marker(**place, icon=icon)
+            new_marker.add_to(old_startup)
     return m
