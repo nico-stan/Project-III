@@ -44,9 +44,6 @@ def foursquare (key, query, location, radius, limit):
         query_ok = query.strip().replace(" ","%20")
     else:
         query_ok = query.strip()
-        
-        
-     --url 'https://api.foursquare.com/v3/places/search?query=San%20Francisco%20International%20Airport&ll=37.7615584%2C-122.4155738&sort=RELEVANCE&limit=1' \
 #url has to be formated to fit the search
     url = f"https://api.foursquare.com/v3/places/search?query={query_ok}&ll={str(location[0]).strip()}%2C{str(location[1]).strip()}&radius={radius}&sort=RELEVANCE&limit={limit}"
     headers =  { "Accept": "application/json",
@@ -99,7 +96,7 @@ def walking(m, location):
     km2 = FeatureGroup(name="Circle 2km").add_to(m)
     Circle(
         location=location,
-        color='yellow',
+        color='blue',
         radius=2000,
         fill=True,
         opacity=0.6,
@@ -118,7 +115,5 @@ def walking(m, location):
         fill_opacity=0.3,
         tooltip='3km'
     ).add_to(km3)
-
-    LayerControl().add_to(m)
     
     return m
