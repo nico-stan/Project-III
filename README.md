@@ -45,37 +45,29 @@ Moreover, we don't want our employees stuck in long hours drive to be able to co
 </p>
 <p>
  
-3. Plotting the statups and design companies with Foursquare API it is possible to notice that the highest concentration of companies nowadays is in the Mission District, having moved from where it was in the previous years. Therefore, that was pottentialy chosen as neighboorhod. Aditionally, this neighborhood has a sub climate different than the rest of San Francisco with less fog and wind.
+3. Plotting the statups and design studios with the Foursquare API it is possible to notice that the highest concentration of companies nowadays is in the Mission District, having moved from where it was in the previous years. Therefore, that was pottentialy chosen as neighboorhod. Aditionally, this neighborhood has a subclimate different than the rest of San Francisco with less fog and wind (plotted with cartoframe). 
+ 
+ ![MissionDistrict]( https://raw.githubusercontent.com/nico-stan/Project-III/714fd9eb6e1dd4e783df1f29eb3458de217bd833/Output/Districts_Cartoframes.png)
+ 
+ The best location for the building would be in the center of the startup and design studios network (plotted with folium).
+
+ ![MissionDistrict]( https://raw.githubusercontent.com/nico-stan/Project-III/714fd9eb6e1dd4e783df1f29eb3458de217bd833/Output/Districts_Folium.png)
 
 </p>
 <p>
  
-4. We believe that un creative teams everyone is equally important, so we also checked for the rest of our criteria to find a new hoe using Foursquare API. We were able to meet all the requirements in a 3 km radius.
+4. As 3 kilometers is the distance that people are usually willing to walk when they need to solve issues, we established that as a threshold for the location.
+ 
+![Radius3k](https://raw.githubusercontent.com/nico-stan/Project-III/714fd9eb6e1dd4e783df1f29eb3458de217bd833/Output/Circles_Folium.png)
  
 </p>
  
- # Creating Dataframes from Foursquare queries
-df1 = foursquare (key,"Design Studio", location, radius, 15)
-df2 = foursquare (key,"Children School", location, radius, 5)
-df3 = foursquare (key,"Startup", location, radius, 15) #Get more updated results for Startups.
-df4 = foursquare (key,"Starbucks", location, radius, 10)
-df5 = foursquare (key,"San Francisco International Airport", location, 30000, 1)
-df6 = foursquare (key,"Bar", location, radius, 10)
-df7 = foursquare (key,"Vegan Restaurant", location, radius, 5)
-df8 = foursquare (key,"Basketball Stadium", location, 5000, 2)
-df9 = foursquare (key,"Pet Grooming", location, radius, 5)
-df= pd.concat([df_startup, df1, df2, df3, df4, df5, df6, df7, df8, df9], ignore_index=True)
-4. 
-5.
-
-
-Use an API to get venues (and for this, you'll need a starting point; some coordinates from which you will call the API)
-Justify your decision using data, not just visualization. How? Maybe measuring distances, maybe assinging weights depending on the importance of your criteria, maybe calculating the density of schools/Starbucks, etc.
-​
-
-
-
-
+ 5.We believe that in creative teams everyone is equally important, so we also checked for the rest of our criteria to find a new home using Foursquare API. In the map it is possible to see that all the criteria important for our employees and Dobby were met in the 3 km radius.
+ 
+<p>
+![final plot](https://raw.githubusercontent.com/nico-stan/Project-III/714fd9eb6e1dd4e783df1f29eb3458de217bd833/Output/Final_Map.png)
+ 
+</p>
 
 ## Our New Home 
 ​
