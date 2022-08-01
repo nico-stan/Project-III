@@ -86,11 +86,11 @@ At **Hourglass games** we are crazy about fun and serious about people and data.
 And Dobby says: thanks!
 
 <p align="center">
-<img src="https://media0.giphy.com/media/4Zo41lhzKt6iZ8xff9/giphy.webp?cid=ecf05e473x7jjzo8xkoo0i8sdd9w1u3atvz01f9pgtcotbqr&rid=giphy.webp&ct=g" width="500" height="400" />
+<img src="https://media0.giphy.com/media/4Zo41lhzKt6iZ8xff9/giphy.webp?cid=ecf05e473x7jjzo8xkoo0i8sdd9w1u3atvz01f9pgtcotbqr&rid=giphy.webp&ct=g" width="450" height="350" />
 </p>
 
 ## Project files
-​
+
 The main directory has 3 subdirectories:
 - Input: Holds the data used to find our location with json.
 - Output: Contains the images with the figures that are used multiple times through the project.
