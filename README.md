@@ -77,7 +77,7 @@ We also have a nearby airport for our accountants!
 
 ## Our New Home 
 
-At **Hourglass games** we are crazy about fun and serious about people and data. We believe that people are at their best when they have fun and they are happy. And this starts home. So our new locations respects the need of all our employees so they can do better what they know the best: make other people happy while they feel taken care of. Our new building is aligned with our values. This is a place to be productive and happy. </p>
+At **Hourglass games** we are crazy about fun and serious about people and data. We believe that people are at their best when they have fun and they are happy. And this starts at home. So our new locations respects the need of all our employees so they can do better what they know the best: make other people happy while they feel taken care of. Our new building is aligned with our values. This is a place to be productive and happy. </p>
 
 
 ![Pionner](https://user-images.githubusercontent.com/46969106/182246740-c46aa604-dec9-4e0e-947b-bb7702036d1c.png)
