@@ -4,7 +4,7 @@
 <img src="https://media3.giphy.com/media/9JgeSP0jlRAVBOG9FD/giphy.gif?cid=ecf05e47jp3l0uc3mrb3f6la40lmqjda5av04epacqm4qpx9&rid=giphy.gif&ct=g" width="400" height="200" />
 </p>
 
-## **Premisse:**
+## **Premise:**
 
 Locating business is a challenging choice considering that are many interests to be met. As we decided to start the **Hourglass games**, we looked for the best building according to our company values and needs. In **Hourglass videogame**, we value:
 
