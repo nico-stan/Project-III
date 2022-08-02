@@ -37,15 +37,15 @@ We asked our employees what they needed to feel happy about our new home. The cr
 </p>
 <p>
  
-2. We did some web scraping for life costs, health and crime rates. Between the three cities, the health index is good and relatively similar and crime rates are slightly higher in San Francisco, though that does not refer to the neighborhoods we would consider to locate **Hourglass games**. Moreover, costs with transportation and square meter prices in the center were cheaper in San Francisco in 2022. With the tech high levels of attrition rate and aggressive competition, we know that to attract the best talents and keep them working happy and satisfied with us we need to invest. Companies that keep their talents with people analytics have 30% higher stock prices, 79% higher return on equity and 96% higher revenue in three years and 56 % higher profit margins than their counterparts (Ferrar & Green, 2021). Therefore, we plan to pay slightly above the international market, invest in quality of work life, having their main needs fulfilled in walking distance, considering everyone needs as equaly important and boost their creativity with a high quality network within and outside our company. </p>
+2. We did some web scraping for life costs, health and crime rates. Between the three cities, the health index is good and relatively similar and crime rates are slightly higher in San Francisco, though that does not refer to the neighborhoods we would consider to locate **Hourglass games**. Moreover, costs with transportation and square meter prices in the center were cheaper in San Francisco in 2022. With the tech high levels of attrition rate and aggressive competition, we know that to attract the best talents and keep them working happy and satisfied with us we need to invest. Companies that keep their talents with people analytics have 30% higher stock prices, 79% higher return on equity and 96% higher revenue in three years and 56 % higher profit margins than their counterparts (Ferrar & Green, 2021). Therefore, we plan to pay slightly above the international market, invest in quality of work life, having their main needs fulfilled in walking distance, considering everyone's needs equally as important and boost their creativity with a high quality network within and outside our company. </p>
 <p>
  
-Moreover, we don't want our employees stuck in long hours drive to be able to connect with other companies or worse: to far from their kids so that they cannot follow their development. As San Francisco is known as the smallest big city and as a hotspot for statups at this moment, we decided to locate **Hourglass games** there. Besides, the population range of age is the same as in our company, so it will be easier to our employees to make friends and feel home in a very inclusive and open minded location.
+Moreover, we don't want our employees stuck in long hours drives to be able to connect with other companies or worse: to far from their kids so that they cannot follow their development. As San Francisco is known as the smallest big city and as a hotspot for startups at this moment, we decided to locate **Hourglass games** there. Besides, the population range of age is the same as in our company, so it will be easier for our employees to make friends and feel like home in a very inclusive and open minded location.
  
 </p>
 <p>
  
-3. Plotting the statups and design studios with the Foursquare API it is possible to notice that the highest concentration of companies nowadays is in the Mission District, having moved from where it was in the previous years. Therefore, that was pottentialy chosen as neighboorhod. Aditionally, this neighborhood has a subclimate different than the rest of San Francisco with less fog and wind (plotted with cartoframe). 
+3. Plotting the startups and design studios with the Foursquare API it is possible to notice that the highest concentration of companies nowadays is in the Mission District, having moved from where it was in the previous years. Therefore, that was potentially chosen as a neighborhood. Additionally, this neighborhood has a subclimate different from the rest of San Francisco with less fog and wind (plotted with cartoframe). 
  
  ![MissionDistrict]( https://raw.githubusercontent.com/nico-stan/Project-III/714fd9eb6e1dd4e783df1f29eb3458de217bd833/Output/Districts_Cartoframes.png)
  
@@ -95,10 +95,10 @@ The main directory has 3 subdirectories:
 - Input: Holds the data used to find our location with json.
 - Output: Contains the images with the figures that are used multiple times through the project.
 - src: Contains python files with all functions created specifically for this analysis.
-In the root directory there are three aditional files:
+In the root directory there are three additional files:
 - README: This file works as a report for the project
 - A Jupyter Notebook that includes all the code used in the project
-- A Jupyter Notebook with the dataframe from the web scrapping
+- A Jupyter Notebook with the dataframe from the web scraping
 
 ## Reference:
 Ferrar and Green (2021). Excellence in People Analytics: How to Use Workforce Data to Create Business Value. Kogan Page.
