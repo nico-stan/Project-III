@@ -102,3 +102,7 @@ In the root directory there are three additional files:
 
 ## Reference:
 Ferrar and Green (2021). Excellence in People Analytics: How to Use Workforce Data to Create Business Value. Kogan Page.
+
+## Authors:
+Juliana and Nicolas collaborated equally for the end result of this project.
+
